@@ -23,11 +23,11 @@ td {
 }
 
 .gameOver {
-    display: ;
-    background-color: aliceblue;
-    border: 1px solid black;
-    padding: 1rem;
-    border-radius: 1rem;
-    width: 30vw;
-    height: 10vh;
+  display: none;
+  background-color: aliceblue;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 30vw;
+  height: 10vh;
 }

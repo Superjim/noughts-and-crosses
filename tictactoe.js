@@ -21,6 +21,19 @@ var player;
 whosTurnIsIt = false;
 
 const squares = document.querySelectorAll(".square");
+const restart = document.getElementById("restartButton");
+
+function setMessage(message) {
+  document.getElementById("message").innerText = message;
+}
+
+function resetBoard() {
+  gameBoard = Array.from(Array(9).keys());
+  whosTurnIsIt = false;
+  for (x = 0; x < squares.length; x++) {
+    document.getElementById(x).innerText = "";
+  }
+}
 
 function gameStart() {
   document.querySelector(".gameOver").style.display = "none";
@@ -40,12 +53,20 @@ function playerTurn(square) {
 
 function turn(squareID, player) {
   if (whosTurnIsIt === false) {
+    //make this better
+    newPlayer = player2;
     gameBoard[squareID] = player1;
   } else {
+    //make this better
+    newPlayer = player1;
     player = player2;
   }
   document.getElementById(squareID).innerText = player;
+  //make this better
+  setMessage("Player " + newPlayer + "'s turn");
   togglePlayer();
 }
+
+function checkWinner(board, player) {}
 
 gameStart();
