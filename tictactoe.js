@@ -23,6 +23,10 @@ whosTurnIsIt = false;
 const squares = document.querySelectorAll(".square");
 const restart = document.getElementById("restartButton");
 
+restart.addEventListener("click", () => {
+  resetBoard();
+});
+
 function setMessage(message) {
   document.getElementById("message").innerText = message;
 }
@@ -61,7 +65,10 @@ function turn(squareID, player) {
     newPlayer = player1;
     player = player2;
   }
-  document.getElementById(squareID).innerText = player;
+
+  if (document.getElementById(squareID).innerText === "") {
+    document.getElementById(squareID).innerText = player;
+  }
   //make this better
   setMessage("Player " + newPlayer + "'s turn");
   togglePlayer();
